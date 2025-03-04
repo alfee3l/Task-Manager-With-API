@@ -1,0 +1,131 @@
+{
+    "info": {
+        "_postman_id": "06df0875-681c-4aef-9b74-968142d6b79a",
+        "name": "Api Authentication",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "register",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/register?name=sead&email=abood1@gmail.com&password=123456789&password_confirmation=123456789",
+                    "query": [
+                        {
+                            "key": "name",
+                            "value": "sead"
+                        },
+                        {
+                            "key": "email",
+                            "value": "abood1@gmail.com"
+                        },
+                        {
+                            "key": "password",
+                            "value": "123456789"
+                        },
+                        {
+                            "key": "password_confirmation",
+                            "value": "123456789"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "register"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/login?email=abood@gmail.com&password=123456789",
+                    "query": [
+                        {
+                            "key": "email",
+                            "value": "abood@gmail.com"
+                        },
+                        {
+                            "key": "password",
+                            "value": "123456789"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "logout",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/logout",
+                    "path": [
+                        "api",
+                        "logout"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "1|B2jIXB5VBqL2O5VNxHN6qGSStPxU5JvOnCKEG4t889fa376c",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

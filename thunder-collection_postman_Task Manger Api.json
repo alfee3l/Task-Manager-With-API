@@ -1,0 +1,408 @@
+{
+    "info": {
+        "_postman_id": "bf5713a2-d0cd-4783-bdc9-3cbe8420a765",
+        "name": "Task Manger Api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Store Task",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks?title=learn Vue&description=learn relaionships(one to many)&priority=low",
+                    "query": [
+                        {
+                            "key": "title",
+                            "value": "learn Vue"
+                        },
+                        {
+                            "key": "description",
+                            "value": "learn relaionships(one to many)"
+                        },
+                        {
+                            "key": "priority",
+                            "value": "low"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "tasks"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "1|2nyLHDAxcNz4sCUl56V5VKMVyFQU0VHWSV6d90a21e82e428",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Task",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks/1?title=learn Django1&description=learn relaionships(one to many)&priority=1",
+                    "query": [
+                        {
+                            "key": "title",
+                            "value": "learn Django1"
+                        },
+                        {
+                            "key": "description",
+                            "value": "learn relaionships(one to many)"
+                        },
+                        {
+                            "key": "priority",
+                            "value": "1"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "tasks",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "6|LUD6XheKm1inggM5YOtrksUU9xwSNkGHdnkyAb998ff068c2",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get user tasks",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/user/1/tasks",
+                    "path": [
+                        "api",
+                        "user",
+                        "1",
+                        "tasks"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get user tasks Copy",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks/1/user",
+                    "path": [
+                        "api",
+                        "tasks",
+                        "1",
+                        "user"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Add CategoriesTo Task",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks/1/categories",
+                    "path": [
+                        "api",
+                        "tasks",
+                        "1",
+                        "categories"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"category_id\":[1,2,3]\n}"
+                }
+            }
+        },
+        {
+            "name": "Get Task Categories",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks/2/categories",
+                    "path": [
+                        "api",
+                        "tasks",
+                        "2",
+                        "categories"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "Get Categories Task ",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/categories/1/tasks",
+                    "path": [
+                        "api",
+                        "categories",
+                        "1",
+                        "tasks"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "Get All Task",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/tasks",
+                    "path": [
+                        "api",
+                        "tasks"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|Ei5oO61zfHfNv7O427YocEAdAdBO2QnFoBQMVpSw81cc2dde",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Profile Store",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/profile",
+                    "path": [
+                        "api",
+                        "profile"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "2|NS6VTvGJVT1j8yXj75KiOZQFAYWtcrELE4UJssiJ34617937",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Task By Priority",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/task/ordered",
+                    "path": [
+                        "api",
+                        "task",
+                        "ordered"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "3|mqIAkAo8qp6h0WKEtrsLfPhiDHlxFIkF1Nvg7Vmc389c691b",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Add To Favorite",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/task/1/favorite",
+                    "path": [
+                        "api",
+                        "task",
+                        "1",
+                        "favorite"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "1|2nyLHDAxcNz4sCUl56V5VKMVyFQU0VHWSV6d90a21e82e428",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
