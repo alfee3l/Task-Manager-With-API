@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProfileRequest;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -16,7 +17,7 @@ class ProfileController extends Controller
         $validated['user_id']=$userId;
         if($request->hasFile('image')){
             $path=$request->file('image')->store('my photo','public');
-            $validated['image']=$path;  
+            $validated['image']=$path;
         }
         $profile = Profile::create($validated);
         return response()->json(['message' => 'Profile created successfully', 'profile' => $profile], 201,);
@@ -26,5 +27,7 @@ class ProfileController extends Controller
        $profile=Profile::where('user_id', $id)->firstOrFail();
        return response()->json($profile,200);
     }
+  
+
 
 }

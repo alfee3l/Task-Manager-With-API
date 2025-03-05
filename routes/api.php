@@ -6,9 +6,6 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
 // Route::get('index',[TaskController::class,'index']);
 // Route::post('tasks',[TaskController::class,'store']);
@@ -28,13 +25,14 @@ Route::post('',[ProfileController::class,'store']);
 Route::get('/{id}',[ProfileController::class,'show']);
 });
 
-Route::get('task/all',[TaskController::class,'getAllTasks'])->middleware('CheckUser');
+Route::get('user',[UserController::class,'GetUser']);
 Route::get('user/{id}/profile',[UserController::class,'getProfile']);
 Route::put('user/{id}/profile',[UserController::class,'update']);
 Route::get('user/{id}/tasks',[UserController::class,'getUserTasks']);
 
 //This يغني من الراوت الي فوق كامل
 Route::apiResource('tasks',TaskController::class)->middleware('auth:sanctum');
+Route::get('task/all',[TaskController::class,'getAllTasks'])->middleware('CheckUser');
 
 Route::get('task/ordered',[TaskController::class,'getTaskByPriority']);
 Route::get('tasks/{id}/user',[TaskController::class,'getTasksUser']);
